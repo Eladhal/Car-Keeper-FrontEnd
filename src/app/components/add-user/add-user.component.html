@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <form #form="ngForm" (ngSubmit)="btnAddUser()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>First name</label>
+              <input type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName" #FirstName = ngModel required>
+              <div class="invalid-feedback" *ngIf="FirstName.invalid && FirstName.dirty ">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Last name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
