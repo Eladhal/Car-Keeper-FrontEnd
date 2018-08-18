@@ -10,6 +10,8 @@ import {NavBarComponent} from './components/nav-bar/nav-bar.component';
 import {SignInComponent} from './sign-in/sign-in.component';
 import {RoutingModule} from './routing/routing.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     imports: [
         BrowserModule,
         RoutingModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
