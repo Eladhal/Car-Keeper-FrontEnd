@@ -7,13 +7,12 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
     providedIn: 'root'
 })
 export class HttpUserService {
-    url = 'api/users';
 
     constructor(private http: HttpClient) {
     }
 
     addUser(user: User) {
-        this.http.post<User>(this.url, user).subscribe(data => {
+        this.http.post<User>('api/sign-up', user).subscribe(data => {
                 console.log(data);
             },
             err => {
