@@ -11,6 +11,10 @@ import {SignInComponent} from './sign-in/sign-in.component';
 import {RoutingModule} from './routing/routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { PageNotFoundComponentComponent } from './components/page-not-found-component/page-not-found-component.component';
+import { CarDetailsComponent } from './car-details/car-details.component';
+import { GeneralFormComponent } from './components/forms/general-form/general-form.component';
 
 
 
@@ -22,7 +26,11 @@ import { HttpClientModule } from '@angular/common/http';
         AddCarActionComponent,
         AddUserComponent,
         NavBarComponent,
-        SignInComponent
+        SignInComponent,
+        UserDashboardComponent,
+        PageNotFoundComponentComponent,
+        CarDetailsComponent,
+        GeneralFormComponent
     ],
     imports: [
         BrowserModule,
