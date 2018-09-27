@@ -9,23 +9,29 @@ import {HttpUserService} from '../../services/user/http-user.service';
     templateUrl: './add-user.component.html',
     styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit {
+export class AddUserComponent {
 
     user: User = new User();
-    genders: string[] = genders;
-    countries: string[];
+    formType: string = 'user';
+    // genders: string[] = genders;
+    // countries: string[];
 
-    constructor(private mapService: ApiDataService, private httpUser: HttpUserService) {
+    constructor() {
+
     }
 
-    ngOnInit() {
-        this.mapService.$countries.subscribe(data => {
-            this.countries = data.map(rec => rec.name);
-        });
-    }
 
-    btnAddUser(user: User) {
-        this.httpUser.addUser(user);
-    }
+    // constructor(private mapService: ApiDataService, private httpUser: HttpUserService) {
+    // }
+    //
+    // ngOnInit() {
+    //     this.mapService.$countries.subscribe(data => {
+    //         this.countries = data.map(rec => rec.name);
+    //     });
+    // }
+    //
+    // btnAddUser(user: User) {
+    //     this.httpUser.addUser(user);
+    // }
 
 }
