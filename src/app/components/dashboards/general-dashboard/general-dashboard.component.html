@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="card" *ngFor="let car of items">
+  <div class="card" *ngFor="let item of Items">
     <div class="row" >
       <div class="col-md-6">
-        <ng-template appCardHost></ng-template>
+        <app-general-card [data]="item" [ItemType]="ItemType"></app-general-card>
       </div>
       <div class="col-md-6">
         <div class="card-img-bottom">
@@ -10,6 +10,6 @@
       </div>
     </div>
   </div>
-  <button>{{"Add " +itemType}}</button>
+  <button (click)="addItem()">{{"Add " +ItemType}}</button>
 </div>
 

@@ -1,0 +1,9 @@
+<div class="card-block">
+  <h4 class="card-title">{{data.make + " " + data.model}}</h4>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{'license Plate:' + " " + data.licensePlate}}</li>
+    <li class="list-group-item">{{'Mileage:' + " " + data.mileage}}</li>
+    <li class="list-group-item">{{'next Action:' + " " + data.nextAction}}</li>
+  </ul>
+  <a routerLink="/car/{{data.Id}}" routerLinkActive="active" class="btn btn-primary">More Details</a>
+</div>

@@ -3,14 +3,14 @@ import {genders} from '../../../Arrays/Genders';
 import {HttpUserService} from '../../../services/user/http-user.service';
 import {User} from '../../../Classes/User';
 import {ApiDataService} from '../../../services/Api/api-data.service';
-import {FormComponentInterface} from '../../../Classes/formCompInterface';
+import {DynamicComponentInterface} from '../../../Classes/dynamicCompInterface';
 
 @Component({
     selector: 'app-user-form',
     templateUrl: './user-form.component.html',
     styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent implements OnInit, FormComponentInterface {
+export class UserFormComponent implements OnInit, DynamicComponentInterface {
 
     @Input() data: any;
     genders: string[] = genders;

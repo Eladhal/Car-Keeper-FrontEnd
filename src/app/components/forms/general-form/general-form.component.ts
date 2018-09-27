@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild, ComponentFactoryResolver, Input} from '@angular/core';
 import {FormHostDirective} from '../../../Directives/formHostDirective/form-host.directive';
 import {FormCompFactoryService} from '../../../services/formCompFact/form-comp-factory.service';
-import {FormComponentInterface} from '../../../Classes/formCompInterface';
+import {DynamicComponentInterface} from '../../../Classes/dynamicCompInterface';
 
 @Component({
     selector: 'app-general-form',
@@ -26,7 +26,7 @@ export class GeneralFormComponent implements OnInit {
         viewContainerRef.clear();
 
         const componentRef = viewContainerRef.createComponent(componentFactory);
-        (<FormComponentInterface>componentRef.instance).data = this.data;
+        (<DynamicComponentInterface>componentRef.instance).data = this.data;
     }
 
 }

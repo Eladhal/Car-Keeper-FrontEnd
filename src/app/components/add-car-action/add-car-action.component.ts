@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {CarAction} from '../../Classes/CarAction';
 
 @Component({
   selector: 'app-add-car-action',
   templateUrl: './add-car-action.component.html',
   styleUrls: ['./add-car-action.component.css']
 })
-export class AddCarActionComponent implements OnInit {
+export class AddCarActionComponent {
 
-  constructor() { }
+    carAction: CarAction = new CarAction();
+    formType = 'carAction';
 
-  ngOnInit() {
-  }
+    constructor() {
+
+    }
 
 }
