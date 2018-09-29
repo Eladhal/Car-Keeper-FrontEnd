@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { HttpMfgRecomondationsService } from './http-mfg-recomondations.service';
+import { HttpMfgRecommendationsService } from './http-mfg-recommendations.service';
 
-describe('HttpMfgRecomondationsService', () => {
+describe('HttpMfgRecommendationsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HttpMfgRecomondationsService]
+      providers: [HttpMfgRecommendationsService]
     });
   });
 
-  it('should be created', inject([HttpMfgRecomondationsService], (service: HttpMfgRecomondationsService) => {
+  it('should be created', inject([HttpMfgRecommendationsService], (service: HttpMfgRecommendationsService) => {
     expect(service).toBeTruthy();
   }));
 });

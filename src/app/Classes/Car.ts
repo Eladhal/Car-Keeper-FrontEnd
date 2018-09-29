@@ -1,3 +1,5 @@
+import {Addon} from './Addon';
+
 export class Car {
     Id: any;
     licensePlate: string;
@@ -6,10 +8,10 @@ export class Car {
     color: string;
     engineCode: string;
     registrationDate: Date;
-    previousOwner: string; //string[]
+    previousOwner: string;
     mileage: number;
     pictures: string; //files[]
-    addOns: string;
+    addOns: Addon[];
     category: string;
-    nextAction: string;
+    nextAction: any; //ActionId
 }

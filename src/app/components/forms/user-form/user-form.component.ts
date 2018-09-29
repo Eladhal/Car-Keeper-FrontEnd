@@ -4,6 +4,7 @@ import {HttpUserService} from '../../../services/user/http-user.service';
 import {User} from '../../../Classes/User';
 import {ApiDataService} from '../../../services/Api/api-data.service';
 import {DynamicComponentInterface} from '../../../Classes/dynamicCompInterface';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-user-form',
@@ -17,7 +18,8 @@ export class UserFormComponent implements OnInit, DynamicComponentInterface {
     countries: string[];
 
 
-    constructor(private mapService: ApiDataService, private httpUser: HttpUserService) {
+    constructor(private mapService: ApiDataService, private httpUser: HttpUserService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -27,7 +29,23 @@ export class UserFormComponent implements OnInit, DynamicComponentInterface {
     }
 
     btnAddUser(user: User) {
-        this.httpUser.addUser(user);
+        this.httpUser.addUser(user).subscribe(data => {
+                console.log(data);
+                this.httpUser.userId = data.Id;
+                this.router.navigate(['/Cars']);
+            },
+            err => {
+                this.httpUser.handleError(err);
+            }
+        );
+    }
+
+    clear() {
+
+    }
+
+    cancel() {
+
     }
 
 }

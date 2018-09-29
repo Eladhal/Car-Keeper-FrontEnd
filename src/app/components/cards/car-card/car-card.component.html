@@ -4,6 +4,15 @@
     <li class="list-group-item">{{'license Plate:' + " " + data.licensePlate}}</li>
     <li class="list-group-item">{{'Mileage:' + " " + data.mileage}}</li>
     <li class="list-group-item">{{'next Action:' + " " + data.nextAction}}</li>
+    <li class="list-group-item">{{'color:' + " " + data.color}}</li>
+    <li class="list-group-item">{{'engineCode:' + " " + data.engineCode}}</li>
+    <li class="list-group-item">{{'registrationDate:' + " " + data.registrationDate}}</li>
+    <li class="list-group-item">{{'previousOwner:' + " " + data.previousOwner}}</li>
+    <li class="list-group-item">{{'category:' + " " + data.category}}</li>
+    <li> <a routerLink="/car/{{data.Id}}/Addons" routerLinkActive="active" class="btn btn-primary">AddOns</a></li>
   </ul>
-  <a routerLink="/car/{{data.Id}}" routerLinkActive="active" class="btn btn-primary">More Details</a>
+  <button type="button" class="btn btn-primary" (click)="btnEdit()">Edit</button>
+  <button type="button" class="btn btn-primary" (click)="btnDelete()">Delete</button>
 </div>
+
+

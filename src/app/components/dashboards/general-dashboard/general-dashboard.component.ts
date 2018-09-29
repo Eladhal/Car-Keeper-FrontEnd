@@ -25,10 +25,13 @@ export class GeneralDashboardComponent implements OnInit {
         switch (this.ItemType) {
             case 'car':
                 this.router.navigate(['Add-Car']);
+                break;
             case 'carAction':
                 this.router.navigate(['Add-Car-Action']);
+                break;
             case 'mfgRecomandation':
                 this.router.navigate(['Add-MFG-Recommendation']);
+                break;
         }
     }
 

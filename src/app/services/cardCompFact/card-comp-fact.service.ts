@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import {MiniCarCardComponent} from '../../components/cards/mini-car-card/mini-car-card.component';
+import {MiniCarActionCardComponent} from '../../components/cards/mini-car-action-card/mini-car-action-card.component';
+import {MiniMfgRecommendationCardComponent} from '../../components/cards/mini-mfg-recommendation-card/mini-mfg-recommendation-card.component';
 import {CarCardComponent} from '../../components/cards/car-card/car-card.component';
-import {CarActionCardComponent} from '../../components/cards/car-action-card/car-action-card.component';
-import {MfgRecommendationCardComponent} from '../../components/cards/mfg-recommendation-card/mfg-recommendation-card.component';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,12 @@ export class CardCompFactService {
         switch (name) {
             case 'car':
                 return CarCardComponent;
-            case 'carAction':
-                return CarActionCardComponent;
-            case 'mfgRecomandation':
-                return MfgRecommendationCardComponent;
+            case 'miniCar':
+                return MiniCarCardComponent;
+            case 'miniCarAction':
+                return MiniCarActionCardComponent;
+            case 'miniMfgRecomandation':
+                return MiniMfgRecommendationCardComponent;
         }
     }
 }

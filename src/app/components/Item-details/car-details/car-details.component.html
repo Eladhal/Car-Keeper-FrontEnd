@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="details">
+        <app-general-card [data]="car" [ItemType]="ItemType"></app-general-card>
+    </div>
+    <div class="sideBar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a routerLink="/car/{{car.Id}}/Actions" routerLinkActive="active" class="btn btn-primary">Car Actions</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/car/{{car.Id}}/Manufacturer-recommendations" routerLinkActive="active" class="btn btn-primary">Manufacturer recommendations</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/car/{{car.Id}}/Add-ons" routerLinkActive="active" class="btn btn-primary">Add-ons</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Next Service</a>
+            </li>
+        </ul>
+    </div>
+</div>

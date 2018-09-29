@@ -16,6 +16,11 @@ export class HttpCarService {
         return this.http.get<Car[]>(`api/user-main/${userid}`);
     }
 
+    getCar(carId: any): Observable<Car> {
+        return this.http.get<Car>(`api/car/${carId}`);
+    }
+
+
     handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
             // A client-side or network error occurred. Handle it accordingly.
@@ -30,12 +35,10 @@ export class HttpCarService {
     }
 
     addCar(car: any) {
-        this.http.post<Car>('api/car', car).subscribe(data => {
-                console.log(data);
-            },
-            err => {
-                this.handleError(err);
-            }
-        );
+        return this.http.post<Car>('api/car', car);
+    }
+
+    deleteCar(Id: number): any {
+        return this.http.delete(`api/car/${Id}`);
     }
 }

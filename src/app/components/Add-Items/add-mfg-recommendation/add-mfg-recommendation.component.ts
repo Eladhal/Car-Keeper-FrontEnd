@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MfgRecommendation} from '../../Classes/MfgRecommendation';
+import {MfgRecommendation} from '../../../Classes/MfgRecommendation';
 
 @Component({
   selector: 'app-add-mfg-recommendation',
