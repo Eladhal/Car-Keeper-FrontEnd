@@ -1,91 +1,90 @@
 <form #form="ngForm" (ngSubmit)="btnAddCar(form.value)">
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label>LicensePlate</label>
-      <input type="text" class="form-control" name="licensePlate"
-             [(ngModel)]="data.licensePlate" #licensePlate="ngModel" required>
-      <div class="messageError"
-           *ngIf="licensePlate.invalid && (licensePlate.dirty || licensePlate.touched)">
-        licensePlate is required.
-      </div>
+    <div class="mb-3">
+        <label>LicensePlate</label>
+        <input type="text" class="form-control" name="licensePlate"
+               [(ngModel)]="data.licensePlate" #licensePlate="ngModel" required>
+        <div class="messageError"
+             *ngIf="licensePlate.invalid && (licensePlate.dirty || licensePlate.touched)">
+            licensePlate is required.
+        </div>
     </div>
-    <div class="col-md-6 mb-3">
-      <label>Make</label>
-      <input type="text" class="form-control" name="make" [(ngModel)]="data.make"
-             #make="ngModel" required>
-      <div class="messageError" *ngIf="make.invalid && (make.dirty || make.touched)">
-        make is required.
-      </div>
+    <div class="mb-3">
+        <label>Make</label>
+        <input type="text" class="form-control" name="make" [(ngModel)]="data.make"
+               #make="ngModel" required>
+        <div class="messageError" *ngIf="make.invalid && (make.dirty || make.touched)">
+            make is required.
+        </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label>Model</label>
-    <input type="text" class="form-control" name="model" [(ngModel)]="data.model"
-           #model="ngModel" required>
-    <div class="messageError" *ngIf="model.invalid && (model.dirty || model.touched)">
-      model is required.
+    <div class="mb-3">
+        <label>Model</label>
+        <input type="text" class="form-control" name="model" [(ngModel)]="data.model"
+               #model="ngModel" required>
+        <div class="messageError" *ngIf="model.invalid && (model.dirty || model.touched)">
+            model is required.
+        </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label>Color</label>
-    <select class="form-control" name="color" [(ngModel)]="data.color" #color="ngModel" required>
-      <option *ngFor="let c of colors" [value]="c">{{c}}</option>
-    </select>
-    <div class="messageError" *ngIf="color.invalid && (color.dirty || color.touched)">
-      Color is required.
+    <div class="mb-3">
+        <label>Color</label>
+        <select class="form-control" name="color" [(ngModel)]="data.color" #color="ngModel" required>
+            <option *ngFor="let c of colors" [value]="c">{{c}}</option>
+        </select>
+        <div class="messageError" *ngIf="color.invalid && (color.dirty || color.touched)">
+            Color is required.
+        </div>
     </div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <label>EngineCode</label>
-    <input type="text" class="form-control" name="engineCode"
-           [(ngModel)]="data.engineCode" #engineCode="ngModel" required>
-    <div class="messageError"
-         *ngIf="engineCode.invalid && (engineCode.dirty || engineCode.touched)">
-      EngineCode is required.
+    <div class="mb-3">
+        <label>EngineCode</label>
+        <input type="text" class="form-control" name="engineCode"
+               [(ngModel)]="data.engineCode" #engineCode="ngModel" required>
+        <div class="messageError"
+             *ngIf="engineCode.invalid && (engineCode.dirty || engineCode.touched)">
+            EngineCode is required.
+        </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label>Registration Date</label>
-    <input type="date" class="form-control" name="registrationDate"
-           [(ngModel)]="data.registrationDate" #registrationDate="ngModel" required>
-    <div class="messageError"
-         *ngIf="registrationDate.invalid && (registrationDate.dirty || registrationDate.touched)">
-      Registration Date is required.
+    <div class="mb-3">
+        <label>Registration Date</label>
+        <input type="date" class="form-control" name="registrationDate"
+               [(ngModel)]="data.registrationDate" #registrationDate="ngModel" required>
+        <div class="messageError"
+             *ngIf="registrationDate.invalid && (registrationDate.dirty || registrationDate.touched)">
+            Registration Date is required.
+        </div>
     </div>
-  </div>
-  <div class="col-md-6 mb-3">
-    <label> previousOwner</label>
-    <input type="text" class="form-control" name="previousOwner"
-           [(ngModel)]="data.previousOwner" #previousOwner="ngModel" required>
-    <div class="messageError"
-         *ngIf="previousOwner.invalid && (previousOwner.dirty || previousOwner.touched)">
-      previousOwner is required.
+    <div class="mb-3">
+        <label> previousOwner</label>
+        <input type="text" class="form-control" name="previousOwner"
+               [(ngModel)]="data.previousOwner" #previousOwner="ngModel" required>
+        <div class="messageError"
+             *ngIf="previousOwner.invalid && (previousOwner.dirty || previousOwner.touched)">
+            previousOwner is required.
+        </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label>Mileage</label>
-    <input type="number" class="form-control" name="mileage"
-           [(ngModel)]="data.mileage" #mileage="ngModel" required pattern="^[0-9]*$">
-    <div class="messageError"
-         *ngIf="mileage.invalid && (mileage.dirty || mileage.touched)">
-      <div *ngIf="mileage?.errors.required">
-        Mileage is required.
-      </div>
-      <div *ngIf="mileage?.errors.pattern">
-        Mileage have to include only numbers.
-      </div>
+    <div class="mb-3">
+        <label>Mileage</label>
+        <input type="number" class="form-control" name="mileage"
+               [(ngModel)]="data.mileage" #mileage="ngModel" required pattern="^[0-9]*$">
+        <div class="messageError"
+             *ngIf="mileage.invalid && (mileage.dirty || mileage.touched)">
+            <div *ngIf="mileage?.errors.required">
+                Mileage is required.
+            </div>
+            <div *ngIf="mileage?.errors.pattern">
+                Mileage have to include only numbers.
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label>Category</label>
-    <select class="form-control" name="catagory" [(ngModel)]="data.category" #category="ngModel" required>
-      <option *ngFor="let ca of categories" [value]="ca">{{ca}}</option>
-    </select>
-    <div class="messageError" *ngIf="category.invalid && (category.dirty || category.touched)">
-      Category is required.
+    <div class="mb-3">
+        <label>Category</label>
+        <select class="form-control" name="catagory" [(ngModel)]="data.category" #category="ngModel" required>
+            <option *ngFor="let ca of categories" [value]="ca">{{ca}}</option>
+        </select>
+        <div class="messageError" *ngIf="category.invalid && (category.dirty || category.touched)">
+            Category is required.
+        </div>
     </div>
-  </div>
-  <button class="btn btn-primary btn-lg btn-block" type="submit"
-          [disabled]="form.invalid">Add Car</button>
+    <button class="btn btn-primary btn-lg btn-block" type="submit"
+            [disabled]="form.invalid">Add Car
+    </button>
 </form>
 

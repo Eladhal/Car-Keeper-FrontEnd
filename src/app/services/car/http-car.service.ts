@@ -13,7 +13,7 @@ export class HttpCarService {
     }
 
     getCarsOfUser(userid: any): Observable<Car[]> {
-        return this.http.get<Car[]>(`api/user-main/${userid}`);
+        return this.http.get<Car[]>(`api/cars/${userid}`);
     }
 
     getCar(carId: any): Observable<Car> {

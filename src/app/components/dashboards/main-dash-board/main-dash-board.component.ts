@@ -10,17 +10,11 @@ import {HttpUserService} from '../../../services/user/http-user.service';
 })
 export class MainDashBoardComponent implements OnInit {
 
-    cars: Car[];
     ItemType = 'miniCar';
-    userId: any;
 
-    constructor(private httpCarService: HttpCarService, private httpUser: HttpUserService) {
+    constructor() {
     }
 
     ngOnInit() {
-        this.userId = this.httpUser.userId;
-        this.httpCarService.getCarsOfUser(this.userId).subscribe(data =>
-            this.cars = data
-        );
     }
 }

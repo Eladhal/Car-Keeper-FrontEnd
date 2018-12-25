@@ -20,7 +20,6 @@ import { CardHostDirective } from './Directives/cardHostDirective/card-host.dire
 import { MiniCarCardComponent } from './components/cards/mini-car-card/mini-car-card.component';
 import { MiniCarActionCardComponent } from './components/cards/mini-car-action-card/mini-car-action-card.component';
 import { MiniMfgRecommendationCardComponent } from './components/cards/mini-mfg-recommendation-card/mini-mfg-recommendation-card.component';
-import { GeneralCardComponent } from './components/cards/general-card/general-card.component';
 import { CarActionFormComponent } from './components/forms/car-action-form/car-action-form.component';
 import { MainDashBoardComponent } from './components/dashboards/main-dash-board/main-dash-board.component';
 import { AddMfgRecommendationComponent } from './components/Add-Items/add-mfg-recommendation/add-mfg-recommendation.component';
@@ -35,6 +34,7 @@ import { UpdateCarActionComponent } from './components/Update-Items/update-car-a
 import {HomeComponent} from './components/home/home.component';
 import { ActionsDashboardComponent } from './components/dashboards/actions-dashboard/actions-dashboard.component';
 import { MfgRecommendationsDashboardComponent } from './components/dashboards/mfg-recommendations-dashboard/mfg-recommendations-dashboard.component';
+import { GeneralCardComponent } from './components/cards/general-card/general-card.component';
 
 
 @NgModule({
@@ -56,7 +56,6 @@ import { MfgRecommendationsDashboardComponent } from './components/dashboards/mf
         MiniCarCardComponent,
         MiniCarActionCardComponent,
         MiniMfgRecommendationCardComponent,
-        GeneralCardComponent,
         CarActionFormComponent,
         MainDashBoardComponent,
         AddMfgRecommendationComponent,
@@ -70,7 +69,8 @@ import { MfgRecommendationsDashboardComponent } from './components/dashboards/mf
         UpdateCarActionComponent,
         HomeComponent,
         ActionsDashboardComponent,
-        MfgRecommendationsDashboardComponent
+        MfgRecommendationsDashboardComponent,
+        GeneralCardComponent,
     ],
     imports: [
         BrowserModule,
@@ -83,6 +83,8 @@ import { MfgRecommendationsDashboardComponent } from './components/dashboards/mf
     entryComponents: [
         UserFormComponent,
         CarFormComponent,
+        CarActionFormComponent,
+        MfgRecommendationCardComponent,
         MiniCarCardComponent,
         MiniCarActionCardComponent,
         MiniMfgRecommendationCardComponent,

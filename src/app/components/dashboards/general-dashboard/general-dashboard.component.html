@@ -1,10 +1,16 @@
-<div class="container">
-    <div *ngIf="Items.length === 0">{{'No '+ItemType+'s'}}</div>
-    <div class="card" *ngFor="let item of Items">
-        <div class="row">
-            <app-general-card [data]="item" [ItemType]="ItemType"></app-general-card>
+<div class="contain">
+    <div class="items">
+        <div class="jumbotron">
+            <div *ngIf="Items.length === 0">{{'No '+ItemType+'s' +' To present'}}</div>
+            <div class="card" *ngFor="let item of Items">
+                <div class="row">
+                    <app-general-card [data]="item"></app-general-card>
+                </div>
+            </div>
         </div>
     </div>
-    <button (click)="addItem()">{{"Add " +ItemType}}</button>
+    <div class="buttonAdd">
+        <button class="btn btn-primary"(click)="addItem()">{{"Add " +ItemType}}</button>
+    </div>
 </div>
 

@@ -1,9 +1,9 @@
-<form #form="ngForm" (ngSubmit)="btnAddUser(form.value)">
+<form #form="ngForm" (ngSubmit)="btnAddUser()">
     <div class="row">
         <div class="col-md-6 mb-3">
             <label>First name</label>
             <input type="text" class="form-control" name="firstName"
-                   [(ngModel)]="data.firstName" #firstName="ngModel" required>
+                   [(ngModel)]="data.firstName" #firstName="ngModel">
             <div class="messageError"
                  *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
                 First name is required.
@@ -12,7 +12,7 @@
         <div class="col-md-6 mb-3">
             <label>Last name</label>
             <input type="text" class="form-control" name="lastName" [(ngModel)]="data.lastName"
-                   #lastName="ngModel" required>
+                   #lastName="ngModel">
             <div class="messageError" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
                 Last Name is required.
             </div>
@@ -21,7 +21,7 @@
     <div class="mb-3">
         <label>Username</label>
         <input type="text" class="form-control" name="username" placeholder="Username"
-               [(ngModel)]="data.userName" #username="ngModel" required>
+               [(ngModel)]="data.userName" #username="ngModel">
         <div class="messageError" *ngIf="username.invalid && (username.dirty || username.touched)">
             Your username is required.
         </div>
@@ -29,7 +29,7 @@
     <div class="mb-3">
         <label>Password</label>
         <input type="password" class="form-control" name="password" placeholder="Password"
-               [(ngModel)]="data.password" #password="ngModel" required minlength="4" required>
+               [(ngModel)]="data.password" #password="ngModel"  minlength="4">
         <div class="messageError" *ngIf="password.invalid && (password.dirty || password.touched)">
             <div *ngIf="password?.errors.required">
                 Password is required.
@@ -42,7 +42,7 @@
     <div class="mb-3">
         <label>Date of birth</label>
         <input type="date" class="form-control" name="dateOfBirth"
-               [(ngModel)]="data.dateOfBirth" #dateOfBirth="ngModel" required>
+               [(ngModel)]="data.dateOfBirth" #dateOfBirth="ngModel">
         <div class="messageError"
              *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)">
             Your date or birth is required.
@@ -60,8 +60,7 @@
     <div class="mb-3">
         <label>phone number</label>
         <input type="number" class="form-control" name="phone"
-               [(ngModel)]="data.phoneNumber" #phone="ngModel" required pattern="^[0-9]*$"
-        >
+               [(ngModel)]="data.phoneNumber" #phone="ngModel" required pattern="^[0-9]*$">
         <div class="messageError"
              *ngIf="phone.invalid && (phone.dirty || phone.touched)">
             <div *ngIf="phone?.errors.required">
@@ -103,6 +102,11 @@
         <label>Street</label>
         <input type="text" class="form-control" name="street"
                [(ngModel)]="data.street" #street="ngModel">
+    </div>
+    <label>Image</label>
+    <div class="custom-file mb-3">
+        <input type="file" name="imagefile" id="file" class="custom-file-input" (change)="onFileSelected($event)">
+        <label for="file" class="custom-file-label">Choose File</label>
     </div>
     <div class="buttons">
         <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Sign Up</button>

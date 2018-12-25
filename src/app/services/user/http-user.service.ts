@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {User} from '../../Classes/User';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpParams, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 
@@ -14,8 +14,23 @@ export class HttpUserService {
     constructor(private http: HttpClient) {
     }
 
-    addUser(user: User): Observable<User> {
-        return this.http.post<User>('api/sign-up', user);
+    getUserByPassAndUserName(user: string, password: string): Observable<User> {
+        let params: HttpParams = new HttpParams();
+        params = params.append('user', user);
+        params = params.append('password', password);
+        return this.http.get<User>(`/api/user`, {params: params});
+    }
+
+    getUser(): Observable<User> {
+        return this.http.get<User>(`/api/user/${this.userId}`);
+    }
+
+    getImage(): Observable<any> {
+        return this.http.get<any>(`/api/user/${this.userId}/image`);
+    }
+
+    addUser(user: any): Observable<User> {
+        return this.http.post<User>('/api/sign-up', user);
     }
 
     handleError(error: HttpErrorResponse) {

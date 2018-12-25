@@ -3,6 +3,7 @@ import {MiniCarCardComponent} from '../../components/cards/mini-car-card/mini-ca
 import {MiniCarActionCardComponent} from '../../components/cards/mini-car-action-card/mini-car-action-card.component';
 import {MiniMfgRecommendationCardComponent} from '../../components/cards/mini-mfg-recommendation-card/mini-mfg-recommendation-card.component';
 import {CarCardComponent} from '../../components/cards/car-card/car-card.component';
+import {UserCardComponent} from '../../components/cards/user-card/user-card.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,6 @@ export class CardCompFactService {
     getCardComp(name: string): any {
 
         switch (name) {
-            case 'car':
-                return CarCardComponent;
             case 'miniCar':
                 return MiniCarCardComponent;
             case 'miniCarAction':

@@ -1,1 +1,13 @@
-<app-general-dashboard [Items]="cars" [ItemType]="ItemType"></app-general-dashboard>
+<div class="contain">
+    <div class="details">
+        <app-general-dashboard [ItemType]="ItemType"></app-general-dashboard>
+    </div>
+    <div class="sideBar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a routerLink="/User/details" routerLinkActive="active" class="btn btn-secondary active">
+                    User Details</a>
+            </li>
+        </ul>
+    </div>
+</div>

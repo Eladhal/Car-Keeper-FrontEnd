@@ -1,5 +1,5 @@
 export class User {
-    Id: any;
+    _id: any;
     userName: string;
     password: string;
     firstName: string;
@@ -12,4 +12,5 @@ export class User {
     street: string;
     city: string;
     country: string;
+    file: File;
 }

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {DynamicComponentInterface} from '../../../Classes/dynamicCompInterface';
 
 @Component({
-    selector: 'app-car-card',
+    selector: 'app-mini-car-card',
     templateUrl: './mini-car-card.component.html',
     styleUrls: ['./mini-car-card.component.css']
 })

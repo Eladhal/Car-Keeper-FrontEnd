@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from '../../../Classes/User';
+import {HttpUserService} from '../../../services/user/http-user.service';
 
 @Component({
   selector: 'app-update-user',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateUserComponent implements OnInit {
 
-  constructor() { }
+    user: User;
+    formType = 'user';
 
-  ngOnInit() {
-  }
+    constructor(private httpUserService: HttpUserService) {
+    }
+
+    ngOnInit() {
+        this.httpUserService.getUser().subscribe(data => {
+            this.user = data;
+        });
+    }
 
 }

@@ -1,6 +1,8 @@
 import {Component, OnInit, Input, ViewChild} from '@angular/core';
 import {CardHostDirective} from '../../../Directives/cardHostDirective/card-host.directive';
 import {Router} from '@angular/router';
+import {HttpCarService} from '../../../services/car/http-car.service';
+import {HttpUserService} from '../../../services/user/http-user.service';
 
 
 @Component({
@@ -10,29 +12,45 @@ import {Router} from '@angular/router';
 })
 export class GeneralDashboardComponent implements OnInit {
 
-    @Input() Items: any[];
+    Items: any[] = [];
     @Input() ItemType: string;
     @ViewChild(CardHostDirective) appFormHost: CardHostDirective;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private httpCarService: HttpCarService,
+                private httpUserService: HttpUserService) {
     }
 
     ngOnInit() {
+        this.GetItems();
+    }
 
+    private GetItems() {
+        switch (this.ItemType) {
+            case 'miniCar':
+                this.httpCarService.getCarsOfUser(this.httpUserService.userId).subscribe(cars => {
+                    this.Items = cars;
+                });
+                break;
+            case 'miniCarAction':
+                break;
+            case 'miniMfgRecomandation':
+                break;
+        }
     }
 
     addItem() {
         switch (this.ItemType) {
-            case 'car':
+            case 'miniCar':
                 this.router.navigate(['Add-Car']);
                 break;
-            case 'carAction':
+            case 'miniCarAction':
                 this.router.navigate(['Add-Car-Action']);
                 break;
-            case 'mfgRecomandation':
+            case 'miniMfgRecomandation':
                 this.router.navigate(['Add-MFG-Recommendation']);
                 break;
         }
     }
+
 
 }

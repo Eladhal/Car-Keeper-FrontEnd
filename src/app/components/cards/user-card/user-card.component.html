@@ -1,3 +1,26 @@
-<p>
-  user-card works!
-</p>
+<div class="col-md-6">
+    <div class="card-img-bottom">
+        <img [src]="Image">
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="card-block" *ngIf="data">
+        <h4 class="card-title">{{data?.firstName + " " + data.lastName}}</h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{'User Name:' + " " + data.userName}}</li>
+            <li class="list-group-item">{{'Email:' + " " + data.email}}</li>
+            <li class="list-group-item">{{'Date Of Birth:' + " " + data.dateOfBirth}}</li>
+            <li class="list-group-item">{{'Gender:' + " " + data.gender}}</li>
+            <li class="list-group-item">{{'Phone Number:' + " " + data.phoneNumber}}</li>
+            <li class="list-group-item">{{'Registration Date:' + " " + data.registrationDate}}</li>
+            <li class="list-group-item">{{'Street:' + " " + data.street}}</li>
+            <li class="list-group-item">{{'City:' + " " + data.city}}</li>
+            <li class="list-group-item">{{'Country:' + " " + data.country}}</li>
+        </ul>
+        <a routerLink="/User/update" routerLinkActive="active" class="btn btn-primary">Edit</a>
+    </div>
+</div>
+
+
+
+

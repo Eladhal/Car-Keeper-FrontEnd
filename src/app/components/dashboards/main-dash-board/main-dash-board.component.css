@@ -1,0 +1,19 @@
+.contain{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.details{
+    width: 85%;
+}
+
+.sideBar{
+    background-color: #F0F0F0;
+    width: 15%;
+    text-align: center;
+}
+
+a{
+    margin-top: 30px;
+}

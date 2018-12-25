@@ -26,7 +26,7 @@ export class GeneralCardComponent implements OnInit {
         viewContainerRef.clear();
 
         const componentRef = viewContainerRef.createComponent(componentFactory);
-        (<DynamicComponentInterface>componentRef.instance).data = this.data;
+         (<DynamicComponentInterface>componentRef.instance).data = this.data;
     }
 
 }
